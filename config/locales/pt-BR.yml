@@ -2,6 +2,10 @@ pt-BR:
   users:
     new:
       title: Cadastro
+
+  rooms:
+    new:
+      title: Cadastro de Quarto
       
   activerecord:
     models:
