@@ -13,6 +13,9 @@ pt-BR:
   rooms:
     new:
       title: Cadastro de Quarto
+    edit:
+      title: Quarto
+      show: Mostrar
 
   links:
     back: Voltar
