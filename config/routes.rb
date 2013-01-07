@@ -2,6 +2,8 @@ Colchonet2::Application.routes.draw do
   resources :rooms
   resources :users
   
+  resource :confirmation, :only => [:show]
+
   root :to => "home#index"
 
   # The priority is based upon order of creation:
