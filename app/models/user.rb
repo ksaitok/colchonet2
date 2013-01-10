@@ -1,4 +1,11 @@
 class User < ActiveRecord::Base
+  has_many :rooms
+  
+
+  scope :most_recent, order('created_at DESC')
+  scope :mais_recente, order('created_at DESC')
+  scope :confirmed, where('confirmed_at IS NOT NULL')
+
   attr_accessible :bio, :email, :full_name, :location, :password, :password_confirmation
 
   validates_presence_of :email, :full_name, :location
@@ -25,5 +32,12 @@ class User < ActiveRecord::Base
   def confirmed?
   	confirmed_at.present?
   end
+
+  def self.authenticate(email, password)
+    confirmed.
+    find_by_email(email).
+    try(:authenticate, password)
+  end
+
 
 end

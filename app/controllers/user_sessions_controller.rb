@@ -1,14 +1,25 @@
 class UserSessionsController < ApplicationController
+	before_filter :require_no_authentication, :only => [:new, :create]
+	before_filter :require_authentication, :only => :destroy
+	
 	def new
-		@session = UserSession.new
+		@session = UserSession.new(session)
 	end
 
 	def create
-		# Ainda nao
+		@session = UserSession.new(session, params[:user_session])
+		if @session.authenticate
+			#Nao esquece de adicionar a chave no i18n
+			redirect_to root_path, :notice => t('flash.notice.signed_in')
+		else
+			render :new
+		end
+
 	end
 
 	def destroy
-		#ainda nao
+		user_session.destroy
+		redirect_to root_path, :notice => t('flash.notice.signed_out')
 	end
 end
 
