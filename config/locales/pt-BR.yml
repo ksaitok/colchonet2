@@ -29,10 +29,13 @@ pt-BR:
       owner_html: '&mdash; %{owner} (%{when})'
       edit: 'Editar'
       destroy: 'Remover'
+    review:
+      login_to_review: 'Faça o login para avaliar quartos'
+
 
   dialogs:
     destroy: 'Voce tem certeza que quer remover?'
-    
+
 
   signup_mailer:
     confirm_email:
@@ -65,6 +68,7 @@ pt-BR:
     models:
       room: Quarto
       user: Usuário
+      review: Avaliação
     attributes:
       user:
         bio: Biografia
@@ -96,6 +100,8 @@ pt-BR:
     notice:
       signed_in: 'Login efetuado com sucesso!'
       signed_out: 'Logout efetuado com sucesso. Até logo!'
+      room_created: 'Quarto criado'
+      room_updated: 'Quarto atualizado'
     alert:
       needs_login: 'Para continuar, você precisa estar logado'
       
