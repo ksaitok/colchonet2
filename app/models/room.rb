@@ -1,4 +1,5 @@
 class Room < ActiveRecord::Base
+	has_many :reviews, :dependent => :destroy
 	belongs_to :user 
 
   attr_accessible :description, :location, :title
