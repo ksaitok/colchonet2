@@ -40,3 +40,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'friendly_id'
 
 gem 'kaminari'
+
+gem 'carrierwave'
+
+gem 'rmagick'

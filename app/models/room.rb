@@ -4,10 +4,12 @@ class Room < ActiveRecord::Base
 	has_many :reviews, :dependent => :destroy
 	belongs_to :user 
 
-  attr_accessible :description, :location, :title
+  attr_accessible :description, :location, :title, :picture
 
   validates_presence_of :description, :location, :title
   validates_presence_of :slug
+
+  mount_uploader :picture, PictureUploader
 
   friendly_id :title, :use => [:slugged, :history]
 
